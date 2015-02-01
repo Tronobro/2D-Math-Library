@@ -163,7 +163,13 @@ Matrix3x3& Matrix3x3::operator *=(Matrix3x3& other)
 
 Vector3 Matrix3x3::operator *(Vector3& other)
 {
-	return other; 
+	Vector3 temp(0.0f, 0.0f, 0.0f);	
+	
+	temp.x = (matrix[0][0]*other.x)+(matrix[0][1]*other.y)+(matrix[0][2]*other.z);
+	temp.y = (matrix[1][0]*other.x)+(matrix[1][1]*other.y)+(matrix[1][2]*other.z);
+	temp.z = (matrix[2][0]*other.x)+(matrix[2][1]*other.y)+(matrix[2][2]*other.z);
+
+	return temp;
 }
 
 float Matrix3x3::GetDeterminant()
