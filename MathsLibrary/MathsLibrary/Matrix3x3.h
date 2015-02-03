@@ -18,11 +18,11 @@ public:
 	Matrix3x3();
 	~Matrix3x3();
 
+	//matrix is row major
 	float matrix[3][3];
 
 	//builds and returns a new identity matrix
 	static Matrix3x3 Identity();
-
 	
 	//builds and returns a new rotation matrix
 	static Matrix3x3 setupRotation(float Radians);
@@ -30,6 +30,7 @@ public:
 	static Matrix3x3 setupScale(Vector2 Scale);
 	//builds and returns a new translation matrix
 	static Matrix3x3 setupTranslation(Vector2 Translation);
+	static Matrix3x3 setupTranslation(Vector3 Translation);
 
 	//transposes matrix and returns *this
 	Matrix3x3& Transpose();//needs testing

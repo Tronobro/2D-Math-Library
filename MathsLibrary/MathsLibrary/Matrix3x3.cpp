@@ -24,7 +24,7 @@ Matrix3x3::~Matrix3x3()
 }
 
 
-static Matrix3x3 Identity()
+Matrix3x3 Matrix3x3::Identity()
 {
 	Matrix3x3 temp;
 	temp.matrix[0][0] = 1.0f;
@@ -34,7 +34,7 @@ static Matrix3x3 Identity()
 }
 
 //builds and returns a new rotation matrix
-static Matrix3x3 setupRotation(float Radians)
+Matrix3x3 Matrix3x3::setupRotation(float Radians)
 {
 	Matrix3x3 temp(Identity());
 	temp.matrix[0][0] = cos(Radians);
@@ -46,7 +46,7 @@ static Matrix3x3 setupRotation(float Radians)
 }
 
 //builds and returns a new scale matrix
-static Matrix3x3 setupScale(Vector2 Scale)
+Matrix3x3 Matrix3x3::setupScale(Vector2 Scale)
 {
 	Matrix3x3 temp(Identity());
 	temp.matrix[0][0] = Scale.x;
@@ -56,7 +56,16 @@ static Matrix3x3 setupScale(Vector2 Scale)
 }
 
 //builds and returns a new translation matrix
-static Matrix3x3 setupTranslation(Vector2 Translation)
+Matrix3x3 Matrix3x3::setupTranslation(Vector2 Translation)
+{
+	Matrix3x3 temp(Identity());
+	temp.matrix[0][2] = Translation.x;
+	temp.matrix[1][2] = Translation.y;
+
+	return temp;
+}
+
+Matrix3x3 Matrix3x3::setupTranslation(Vector3 Translation)
 {
 	Matrix3x3 temp(Identity());
 	temp.matrix[0][2] = Translation.x;

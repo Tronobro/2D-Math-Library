@@ -41,17 +41,17 @@ float Vector2::Distance(const Vector2& one, const Vector2& two)
 
 float Vector2::ToRadians(float degrees)
 {
-	return (degrees/180)*3.14159;
+	return static_cast<float>((degrees/180)*3.14159);
 }
 
 float Vector2::ToDegrees(float radians)
 {
-	return(radians/3.14159)*180;
+	return static_cast<float>((radians/3.14159)*180);
 }
 
 Vector2 Vector2::FromAngle(float degrees)
 {
-	float radian = degrees / 180.0f * 3.14159;
+	float radian = static_cast<float>(degrees / 180.0f * 3.14159);
 	return Vector2(cos(radian), sin(radian));
 }
 

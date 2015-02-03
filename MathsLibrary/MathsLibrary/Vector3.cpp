@@ -7,6 +7,13 @@
 #include "Vector3.h"
 #include <cmath>
 
+Vector3::Vector3()
+{
+	x = 0.0f;
+	y = 0.0f;
+	z = 0.0f;
+}
+
 Vector3::Vector3(float x, float y, float z)
 {
 	this->x = x;
@@ -42,12 +49,12 @@ float Vector3::Distance(const Vector3& one, const Vector3& two)
 
 float Vector3::ToRadians(float degrees)
 {
-	return (degrees/180)*3.14159;
+	return static_cast<float>((degrees/180)*3.14159);
 }
 
 float Vector3::ToDegrees(float radians)
 {
-	return(radians/3.14159)*180;
+	return static_cast<float>((radians/3.14159)*180);
 }
 
 float Vector3::Magnitude()
