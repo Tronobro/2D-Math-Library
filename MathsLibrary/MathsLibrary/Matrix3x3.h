@@ -10,6 +10,7 @@
 #define MATRIX3X3_H
 
 #include "Vector3.h"
+#include "Vector2.h"
 
 class Matrix3x3
 {
@@ -21,6 +22,15 @@ public:
 
 	//builds and returns a new identity matrix
 	static Matrix3x3 Identity();
+
+	
+	//builds and returns a new rotation matrix
+	static Matrix3x3 setupRotation(float Radians);
+	//builds and returns a new scale matrix
+	static Matrix3x3 setupScale(Vector2 Scale);
+	//builds and returns a new translation matrix
+	static Matrix3x3 setupTranslation(Vector2 Translation);
+
 	//transposes matrix and returns *this
 	Matrix3x3& Transpose();//needs testing
 	//builds and returns a new matrix that is the transpose of this matrix

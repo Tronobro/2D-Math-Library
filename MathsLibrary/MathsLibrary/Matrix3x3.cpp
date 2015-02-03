@@ -5,7 +5,7 @@
 //	Brief:			<The .cpp file for the Matrix 3x3 class> 
 //////////////////////////////////////////////////////////////////
 #include "Matrix3x3.h"
-
+#include <cmath>
 
 Matrix3x3::Matrix3x3()
 {
@@ -30,6 +30,38 @@ static Matrix3x3 Identity()
 	temp.matrix[0][0] = 1.0f;
 	temp.matrix[1][1] = 1.0f;
 	temp.matrix[2][2] = 1.0f;
+	return temp;
+}
+
+//builds and returns a new rotation matrix
+static Matrix3x3 setupRotation(float Radians)
+{
+	Matrix3x3 temp(Identity());
+	temp.matrix[0][0] = cos(Radians);
+	temp.matrix[0][1] = -sin(Radians);
+	temp.matrix[1][0] = sin(Radians);
+	temp.matrix[1][1] = cos(Radians);
+
+	return temp;
+}
+
+//builds and returns a new scale matrix
+static Matrix3x3 setupScale(Vector2 Scale)
+{
+	Matrix3x3 temp(Identity());
+	temp.matrix[0][0] = Scale.x;
+	temp.matrix[1][1] = Scale.y; 
+
+	return temp;
+}
+
+//builds and returns a new translation matrix
+static Matrix3x3 setupTranslation(Vector2 Translation)
+{
+	Matrix3x3 temp(Identity());
+	temp.matrix[0][2] = Translation.x;
+	temp.matrix[1][2] = Translation.y;
+
 	return temp;
 }
 
@@ -58,11 +90,11 @@ Matrix3x3 Matrix3x3::GetInverse()
 	float determinant = GetDeterminant();
 	Matrix3x3 minors;
 	Matrix3x3 cofactor;
-	
+
 	minors.matrix[0][0] = ((matrix[1][1]*matrix[2][2]) - (matrix[1][2]*matrix[2][1]));
 	minors.matrix[0][1] = ((matrix[1][0]*matrix[2][2]) - (matrix[2][0]*matrix[1][2]));
 	minors.matrix[0][2] = ((matrix[1][0]*matrix[2][1]) - (matrix[2][0]*matrix[1][1]));
-		
+
 	minors.matrix[1][0] = ((matrix[0][1]*matrix[2][2]) - (matrix[2][1]*matrix[0][2]));
 	minors.matrix[1][1] = ((matrix[0][0]*matrix[2][2]) - (matrix[2][0]*matrix[0][2]));
 	minors.matrix[1][2] = ((matrix[0][0]*matrix[2][1]) - (matrix[2][0]*matrix[0][1]));
@@ -74,11 +106,11 @@ Matrix3x3 Matrix3x3::GetInverse()
 	cofactor.matrix[0][0] = minors.matrix[0][0];
 	cofactor.matrix[0][1] = -minors.matrix[0][1];
 	cofactor.matrix[0][2] = minors.matrix[0][2];
-								
+
 	cofactor.matrix[1][0] = -minors.matrix[1][0];
 	cofactor.matrix[1][1] = minors.matrix[1][1];
 	cofactor.matrix[1][2] = -minors.matrix[1][2];
-	
+
 	cofactor.matrix[2][0] = minors.matrix[2][0];
 	cofactor.matrix[2][1] = -minors.matrix[2][1];
 	cofactor.matrix[2][2] = minors.matrix[2][2];
@@ -148,8 +180,8 @@ Matrix3x3 Matrix3x3::operator *(Matrix3x3& other)
 		{
 			temp.matrix[j][i]
 			= (matrix[j][0]*other.matrix[0][i])
-			+ (matrix[j][1]*other.matrix[1][i])
-			+ (matrix[j][2]*other.matrix[2][i]);
+				+ (matrix[j][1]*other.matrix[1][i])
+				+ (matrix[j][2]*other.matrix[2][i]);
 		}
 	}
 	return temp;
@@ -164,7 +196,7 @@ Matrix3x3& Matrix3x3::operator *=(Matrix3x3& other)
 Vector3 Matrix3x3::operator *(Vector3& other)
 {
 	Vector3 temp(0.0f, 0.0f, 0.0f);	
-	
+
 	temp.x = (matrix[0][0]*other.x)+(matrix[0][1]*other.y)+(matrix[0][2]*other.z);
 	temp.y = (matrix[1][0]*other.x)+(matrix[1][1]*other.y)+(matrix[1][2]*other.z);
 	temp.z = (matrix[2][0]*other.x)+(matrix[2][1]*other.y)+(matrix[2][2]*other.z);
