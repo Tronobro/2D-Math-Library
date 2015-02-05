@@ -6,6 +6,7 @@
 //////////////////////////////////////////////////////////////////
 #include "Vector2.h"
 #include <cmath> 
+#include <iostream>
 
 Vector2::Vector2(float x, float y)
 {
@@ -112,6 +113,11 @@ float Vector2::AngleBetween(Vector2 &other)
 		//the vectors are pointing in the same direction
 		return 0;
 	}
+}
+
+void Vector2::OutputToConsole()
+{
+	std::cout << x << "\n"<< y << std::endl;
 }
 
 Vector2 Vector2::operator=(const Vector2 &other)

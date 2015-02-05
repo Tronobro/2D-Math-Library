@@ -6,6 +6,7 @@
 //////////////////////////////////////////////////////////////////
 #include "Matrix3x3.h"
 #include <cmath>
+#include <iostream>
 
 Matrix3x3::Matrix3x3()
 {
@@ -72,6 +73,15 @@ Matrix3x3 Matrix3x3::setupTranslation(Vector3 Translation)
 	temp.matrix[1][2] = Translation.y;
 
 	return temp;
+}
+
+void Matrix3x3::OutputToConsole()
+{
+	for(size_t i = 0; i<3; i++)
+	{
+			std::cout <<matrix[i][0] << " " << matrix[i][1] << " " << matrix[i][2] << std::endl;
+	}
+	std::cout << std::endl; 
 }
 
 Matrix3x3& Matrix3x3::Transpose()

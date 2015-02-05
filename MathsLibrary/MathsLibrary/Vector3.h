@@ -24,7 +24,10 @@ public:
 	static Vector3 Zero();
 	static Vector3 One(); 
 	static float Distance(const Vector3& one, const Vector3& two);
+	static float ToRadians(float degrees);
+	static float ToDegrees(float radians);
 
+	void OutputToConsole();
 	float Magnitude();
 	Vector3 GetNormal();
 	float Dot(const Vector3 &other);
@@ -44,7 +47,6 @@ public:
 
 private:
 	Vector3 Normalise();
-	float ToRadians(float degrees);
-	float ToDegrees(float radians);
+	
 };
 #endif

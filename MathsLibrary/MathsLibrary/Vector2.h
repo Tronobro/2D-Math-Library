@@ -27,6 +27,8 @@ public:
 	Vector2 GetNormal();
 	float Dot(const Vector2 &other);	//Calculates the dot product between 2 vectors
 	float AngleBetween(Vector2 &other);
+
+	void OutputToConsole();
 	 
 	//Overloads
 	Vector2 operator=(const Vector2 & other);

@@ -18,7 +18,7 @@ public:
 	Matrix3x3();
 	~Matrix3x3();
 
-	//matrix is row major
+	//matrix is in row major order
 	float matrix[3][3];
 
 	//builds and returns a new identity matrix
@@ -31,6 +31,9 @@ public:
 	//builds and returns a new translation matrix
 	static Matrix3x3 setupTranslation(Vector2 Translation);
 	static Matrix3x3 setupTranslation(Vector3 Translation);
+
+	//outputs to console
+	void OutputToConsole();
 
 	//transposes matrix and returns *this
 	Matrix3x3& Transpose();//needs testing

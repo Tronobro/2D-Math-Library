@@ -6,6 +6,7 @@
 //////////////////////////////////////////////////////////////////
 #include "Vector3.h"
 #include <cmath>
+#include <iostream>
 
 Vector3::Vector3()
 {
@@ -55,6 +56,11 @@ float Vector3::ToRadians(float degrees)
 float Vector3::ToDegrees(float radians)
 {
 	return static_cast<float>((radians/3.14159)*180);
+}
+
+void Vector3::OutputToConsole()
+{
+	std::cout << x << "\n" << y << "\n" << z << "\n" << std::endl;
 }
 
 float Vector3::Magnitude()
