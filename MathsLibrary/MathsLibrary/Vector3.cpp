@@ -177,7 +177,7 @@ Vector3& Vector3::operator-=(const Vector3 &other)
 	return *this;
 }
 
-Vector3 Vector3::operator*(const int &multiplier)
+Vector3 Vector3::operator*(const float &multiplier)
 {
 	Vector3 temp(0.f, 0.f, 0.f);
 	temp.x = x * multiplier;
@@ -186,13 +186,13 @@ Vector3 Vector3::operator*(const int &multiplier)
 	return temp;
 }
 
-Vector3& Vector3::operator*=(const int &multiplier)
+Vector3& Vector3::operator*=(const float &multiplier)
 {
 	*this = *this * multiplier;
 	return *this;
 }
 
-Vector3 Vector3::operator/(const int &multiplier)
+Vector3 Vector3::operator/(const float &multiplier)
 {
 	Vector3 temp(0.f, 0.f, 0.f);
 	temp.x = x / multiplier;
@@ -201,7 +201,7 @@ Vector3 Vector3::operator/(const int &multiplier)
 	return temp;
 }
 
-Vector3& Vector3::operator/=(const int &multiplier)
+Vector3& Vector3::operator/=(const float &multiplier)
 {
 	*this = *this / multiplier;
 	return *this;

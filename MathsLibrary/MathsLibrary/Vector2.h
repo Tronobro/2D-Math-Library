@@ -36,10 +36,10 @@ public:
 	Vector2& operator+=(const Vector2 &other);
 	Vector2 operator-(const Vector2 &other);
 	Vector2& operator-=(const Vector2 &other);
-	Vector2 operator*(const int &multiplier);
-	Vector2& operator*=(const int &multiplier);
-	Vector2 operator/(const int &multiplier);
-	Vector2& operator/=(const int &multiplier);
+	Vector2 operator*(const float &multiplier);
+	Vector2& operator*=(const float &multiplier);
+	Vector2 operator/(const float &multiplier);
+	Vector2& operator/=(const float &multiplier);
 
 private:
 	Vector2 Normalise();

@@ -25,9 +25,13 @@ public:
 	static Matrix3x3 Identity();
 	
 	//builds and returns a new rotation matrix
-	static Matrix3x3 setupRotation(float Radians);
+	//static Matrix3x3 setupRotation(float Radians);
+	static Matrix3x3 setupRotation(float Degrees);
+
 	//builds and returns a new scale matrix
 	static Matrix3x3 setupScale(Vector2 Scale);
+	//static Matrix3x3 setupScale(float Scale);
+
 	//builds and returns a new translation matrix
 	static Matrix3x3 setupTranslation(Vector2 Translation);
 	static Matrix3x3 setupTranslation(Vector3 Translation);

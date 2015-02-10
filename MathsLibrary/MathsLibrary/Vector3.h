@@ -40,10 +40,10 @@ public:
 	Vector3& operator+=(const Vector3 &other);
 	Vector3 operator-(const Vector3 &other);
 	Vector3& operator-=(const Vector3 &other);
-	Vector3 operator*(const int &multiplier);
-	Vector3& operator*=(const int &multiplier);
-	Vector3 operator/(const int &multiplier);
-	Vector3& operator/=(const int &multiplier);
+	Vector3 operator*(const float &multiplier);
+	Vector3& operator*=(const float &multiplier);
+	Vector3 operator/(const float &multiplier);
+	Vector3& operator/=(const float &multiplier);
 
 private:
 	Vector3 Normalise();

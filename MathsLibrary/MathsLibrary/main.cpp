@@ -12,6 +12,7 @@ int main()
 
 	boop.OutputToConsole();
 
+	(boop*0.1f).OutputToConsole();
 	matrix.OutputToConsole();
 
 	matrix *= Matrix3x3(Matrix3x3::setupTranslation(boop)); 

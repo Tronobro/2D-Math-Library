@@ -35,13 +35,25 @@ Matrix3x3 Matrix3x3::Identity()
 }
 
 //builds and returns a new rotation matrix
-Matrix3x3 Matrix3x3::setupRotation(float Radians)
+//Matrix3x3 Matrix3x3::setupRotation(float Radians)
+//{
+//	Matrix3x3 temp(Identity());
+//	temp.matrix[0][0] = cos(Radians);
+//	temp.matrix[0][1] = -sin(Radians);
+//	temp.matrix[1][0] = sin(Radians);
+//	temp.matrix[1][1] = cos(Radians);
+//
+//	return temp;
+//}
+
+Matrix3x3 Matrix3x3::setupRotation(float Degrees)
 {
 	Matrix3x3 temp(Identity());
-	temp.matrix[0][0] = cos(Radians);
-	temp.matrix[0][1] = -sin(Radians);
-	temp.matrix[1][0] = sin(Radians);
-	temp.matrix[1][1] = cos(Radians);
+	float radians = Vector3::ToDegrees(Degrees);
+	temp.matrix[0][0] = cos(radians);
+	temp.matrix[0][1] = -sin(radians);
+	temp.matrix[1][0] = sin(radians);
+	temp.matrix[1][1] = cos(radians);
 
 	return temp;
 }
@@ -55,6 +67,14 @@ Matrix3x3 Matrix3x3::setupScale(Vector2 Scale)
 
 	return temp;
 }
+
+//Matrix3x3 Matrix3x3::setupScale(float Scale)
+//{
+//	Matrix3x3 temp(Identity());
+//	temp.matrix[0][0] = Scale;
+//	temp.matrix[1][1] = Scale; 
+//	return temp;
+//}
 
 //builds and returns a new translation matrix
 Matrix3x3 Matrix3x3::setupTranslation(Vector2 Translation)

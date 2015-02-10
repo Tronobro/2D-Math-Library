@@ -162,7 +162,7 @@ Vector2& Vector2::operator-=(const Vector2 &other)
 	return *this;
 }
 
-Vector2 Vector2::operator*(const int &multiplier)
+Vector2 Vector2::operator*(const float &multiplier)
 {
 	Vector2 temp(0.f, 0.f);
 	temp.x = x * multiplier;
@@ -170,13 +170,13 @@ Vector2 Vector2::operator*(const int &multiplier)
 	return temp;
 }
 
-Vector2& Vector2::operator*=(const int &multiplier)
+Vector2& Vector2::operator*=(const float &multiplier)
 {
 	*this = *this * multiplier;
 	return *this;
 }
 
-Vector2 Vector2::operator/(const int &multiplier)
+Vector2 Vector2::operator/(const float &multiplier)
 {
 	Vector2 temp(0.f, 0.f);
 	temp.x = x / multiplier;
@@ -184,7 +184,7 @@ Vector2 Vector2::operator/(const int &multiplier)
 	return temp;
 }
 
-Vector2& Vector2::operator/=(const int &multiplier)
+Vector2& Vector2::operator/=(const float &multiplier)
 {
 	*this = *this * multiplier;
 	return *this;
