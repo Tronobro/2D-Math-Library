@@ -12,9 +12,9 @@ class Vector3
 public:
 
 
-	float x;
-	float y;
-	float z;
+	float x;	//4 bytes
+	float y;	//4 bytes
+	float z;	//4 bytes
 
 	Vector3();
 	Vector3(float x, float y, float z);

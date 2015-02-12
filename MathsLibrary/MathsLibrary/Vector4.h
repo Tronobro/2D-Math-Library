@@ -11,10 +11,10 @@ class Vector4
 {
 public:
 
-	float x;
-	float y;
-	float z;
-	float w;
+	float x;	//4 bytes
+	float y;	//4 bytes
+	float z;	//4 bytes
+	float w;	//4 bytes
 
 	Vector4();
 	Vector4(float x, float y, float z, float w);

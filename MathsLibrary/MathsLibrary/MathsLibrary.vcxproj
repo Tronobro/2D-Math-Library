@@ -85,6 +85,7 @@
     <ClCompile Include="Vector4.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="MathLibraryRA.h" />
     <ClInclude Include="Matrix3x3.h" />
     <ClInclude Include="Vector2.h" />
     <ClInclude Include="Vector3.h" />

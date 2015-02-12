@@ -19,7 +19,7 @@ public:
 	~Matrix3x3();
 
 	//matrix is in row major order
-	float matrix[3][3];
+	float matrix[3][3]; //16 bytes
 
 	//builds and returns a new identity matrix
 	static Matrix3x3 Identity();

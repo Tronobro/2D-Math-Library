@@ -14,8 +14,8 @@ public:
 	Vector2(const Vector2& other);
 	~Vector2();
 
-	float x;
-	float y;
+	float x;	//4 bytes
+	float y;	//4 bytes
 
 	static Vector2 Zero();
 	static Vector2 One(); 
