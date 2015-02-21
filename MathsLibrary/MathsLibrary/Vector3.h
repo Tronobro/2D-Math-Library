@@ -44,6 +44,8 @@ public:
 	Vector3& operator*=(const float &multiplier);
 	Vector3 operator/(const float &multiplier);
 	Vector3& operator/=(const float &multiplier);
+	bool operator==(Vector3 &other);
+	bool operator!=(Vector3 &other);
 
 private:
 	Vector3 Normalise();

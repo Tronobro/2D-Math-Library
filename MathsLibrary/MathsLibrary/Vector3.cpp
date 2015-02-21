@@ -206,3 +206,13 @@ Vector3& Vector3::operator/=(const float &multiplier)
 	*this = *this / multiplier;
 	return *this;
 }
+
+bool Vector3::operator==(Vector3 &other)
+{
+	return x==other.x && y==other.y && z == other.z;
+}
+
+bool Vector3::operator!=(Vector3 &other)
+{
+	return x!=other.x || y!=other.y || z!=other.z;
+}

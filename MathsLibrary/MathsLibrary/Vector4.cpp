@@ -217,3 +217,13 @@ Vector4& Vector4::operator/=(const float &multiplier)
 	*this = *this / multiplier;
 	return *this;
 }
+
+bool Vector4::operator==(Vector4 &other)
+{
+	return x==other.x && y==other.y && z==other.z && w==other.w;
+}
+
+bool Vector4::operator!=(Vector4 &other)
+{
+	return x!=other.x || y!=other.y || z!=other.z || w!=other.w;
+}

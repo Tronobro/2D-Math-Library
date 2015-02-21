@@ -99,7 +99,7 @@ void Matrix3x3::OutputToConsole()
 {
 	for(size_t i = 0; i<3; i++)
 	{
-			std::cout <<matrix[i][0] << " " << matrix[i][1] << " " << matrix[i][2] << std::endl;
+		std::cout <<matrix[i][0] << " " << matrix[i][1] << " " << matrix[i][2] << std::endl;
 	}
 	std::cout << std::endl; 
 }
@@ -241,6 +241,53 @@ Vector3 Matrix3x3::operator *(Vector3& other)
 	temp.z = (matrix[2][0]*other.x)+(matrix[2][1]*other.y)+(matrix[2][2]*other.z);
 
 	return temp;
+}
+
+Matrix3x3 Matrix3x3::operator*(float scalar)
+{
+	Matrix3x3 temp(*this);
+	for(size_t j = 0; j<3; j++)
+	{
+		for(size_t i = 0; i<3; i++)
+		{
+			temp.matrix[j][i]*=scalar;
+		}
+	}
+	return temp;
+}
+
+Matrix3x3& Matrix3x3::operator*=(float scalar)
+{
+	*this = *this * scalar;
+	return *this;
+}
+
+bool Matrix3x3::operator == (Matrix3x3& other)
+{
+	return
+		(matrix[0][0] == other.matrix[0][0]
+	&& matrix[0][1] == other.matrix[0][1]
+	&& matrix[0][2] == other.matrix[0][2]
+	&& matrix[1][0] == other.matrix[1][0]
+	&& matrix[1][1] == other.matrix[1][1]
+	&& matrix[1][2] == other.matrix[1][2]
+	&& matrix[2][0] == other.matrix[2][0]
+	&& matrix[2][1] == other.matrix[2][1]
+	&& matrix[2][2] == other.matrix[2][2]);
+}
+
+bool Matrix3x3::operator != (Matrix3x3& other)
+{
+	return
+		(matrix[0][0] != other.matrix[0][0]
+	|| matrix[0][1] != other.matrix[0][1]
+	|| matrix[0][2] != other.matrix[0][2]
+	|| matrix[1][0] != other.matrix[1][0]
+	|| matrix[1][1] != other.matrix[1][1]
+	|| matrix[1][2] != other.matrix[1][2]
+	|| matrix[2][0] != other.matrix[2][0]
+	|| matrix[2][1] != other.matrix[2][1]
+	|| matrix[2][2] != other.matrix[2][2]);
 }
 
 float Matrix3x3::GetDeterminant()

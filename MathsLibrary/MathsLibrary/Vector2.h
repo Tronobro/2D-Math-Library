@@ -40,6 +40,9 @@ public:
 	Vector2& operator*=(const float &multiplier);
 	Vector2 operator/(const float &multiplier);
 	Vector2& operator/=(const float &multiplier);
+	bool operator==(Vector2 &other);
+	bool operator!=(Vector2 &other);
+
 
 private:
 	Vector2 Normalise();

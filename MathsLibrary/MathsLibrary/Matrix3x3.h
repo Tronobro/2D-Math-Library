@@ -53,9 +53,14 @@ public:
 	Matrix3x3 operator *(Matrix3x3& other);
     Vector3 operator *(Vector3& other);
 
+	Matrix3x3 operator*(float scalar);
+	Matrix3x3& operator*=(float scalar);
+
 	Matrix3x3& operator +=(Matrix3x3& other);
 	Matrix3x3& operator -=(Matrix3x3& other);
 	Matrix3x3& operator *=(Matrix3x3& other);
+	bool operator == (Matrix3x3& other);
+	bool operator != (Matrix3x3& other);
 
 private: 
 	float GetDeterminant();//needs testing

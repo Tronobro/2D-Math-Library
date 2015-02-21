@@ -189,3 +189,13 @@ Vector2& Vector2::operator/=(const float &multiplier)
 	*this = *this * multiplier;
 	return *this;
 }
+
+bool Vector2::operator==(Vector2 &other)
+{
+	return x==other.x && y == other.y;
+}
+
+bool Vector2::operator!=(Vector2 &other)
+{
+	return x!=other.x || y != other.y;
+}
