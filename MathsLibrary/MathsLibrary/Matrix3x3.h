@@ -16,6 +16,7 @@ class Matrix3x3
 {
 public:
 	Matrix3x3();
+	Matrix3x3(const Matrix3x3& other);
 	~Matrix3x3();
 
 	//matrix is in row major order

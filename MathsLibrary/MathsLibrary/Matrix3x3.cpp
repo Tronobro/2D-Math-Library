@@ -19,6 +19,16 @@ Matrix3x3::Matrix3x3()
 	}
 }
 
+Matrix3x3::Matrix3x3(const Matrix3x3& other)
+{
+	for(size_t i = 0; i<3; i++)
+	{
+		for(size_t j = 0; j<3; j++)
+		{
+			matrix[i][j] = other.matrix[i][j];
+		}
+	}
+}
 
 Matrix3x3::~Matrix3x3()
 {
