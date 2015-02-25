@@ -59,7 +59,7 @@ Matrix3x3 Matrix3x3::Identity()
 Matrix3x3 Matrix3x3::setupRotation(float Degrees)
 {
 	Matrix3x3 temp(Identity());
-	float radians = Vector3::ToDegrees(Degrees);
+	float radians = Vector3::ToRadians(Degrees);
 	temp.matrix[0][0] = cos(radians);
 	temp.matrix[0][1] = -sin(radians);
 	temp.matrix[1][0] = sin(radians);
