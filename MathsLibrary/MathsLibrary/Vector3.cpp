@@ -123,7 +123,7 @@ float Vector3::AngleBetween(Vector3 &other)
 	}
 }
 
-Vector3 Vector3::Cross(Vector3 &other)
+Vector3 Vector3::Cross(const Vector3 &other)
 	//Returns the normalised cross product of two vectors. The normalised vector is orthogonal to the original two. i.e. perpendicular to both.
 {
 	Vector3 temp(0.0f, 0.0f, 0.0f);
@@ -207,12 +207,12 @@ Vector3& Vector3::operator/=(const float &multiplier)
 	return *this;
 }
 
-bool Vector3::operator==(Vector3 &other)
+bool Vector3::operator==(const Vector3 &other)
 {
 	return x==other.x && y==other.y && z == other.z;
 }
 
-bool Vector3::operator!=(Vector3 &other)
+bool Vector3::operator!=(const Vector3 &other)
 {
 	return x!=other.x || y!=other.y || z!=other.z;
 }

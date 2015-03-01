@@ -44,7 +44,7 @@ public:
 
 	//float AngleBetween(Vector4 &other);
 
-	Vector4 Cross(Vector4 &other);		//Calculates the cross product with another vector
+	Vector4 Cross(const Vector4 &other);		//Calculates the cross product with another vector
 										//Homogenus 3D vector
 
 	//Overloads
@@ -57,8 +57,8 @@ public:
 	Vector4& operator*=(const float &multiplier);
 	Vector4 operator/(const float &multiplier);
 	Vector4& operator/=(const float &multiplier);
-	bool operator==(Vector4 &other);
-	bool operator!=(Vector4 &other);
+	bool operator==(const Vector4 &other);
+	bool operator!=(const Vector4 &other);
 
 private:
 	Vector4 Normalise();	//Returns the normalised vector

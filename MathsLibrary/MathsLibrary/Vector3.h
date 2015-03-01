@@ -44,7 +44,7 @@ public:
 
 	float AngleBetween(Vector3 &other);	//Finds the angle between two vectors
 
-	Vector3 Cross(Vector3 &other);		//Calculates the cross product with another vector
+	Vector3 Cross(const Vector3 &other);		//Calculates the cross product with another vector
 
 	//Overloads
 	Vector3 operator=(const Vector3 &other);
@@ -56,8 +56,8 @@ public:
 	Vector3& operator*=(const float &multiplier);
 	Vector3 operator/(const float &multiplier);
 	Vector3& operator/=(const float &multiplier);
-	bool operator==(Vector3 &other);
-	bool operator!=(Vector3 &other);
+	bool operator==(const Vector3 &other);
+	bool operator!=(const Vector3 &other);
 
 private:
 	Vector3 Normalise();	//Calculates the normalised version of the vector

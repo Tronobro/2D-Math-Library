@@ -129,7 +129,7 @@ float Vector4::Dot(const Vector4 &other)
 //}
 
 //this need to be implemented properly or deleted
-Vector4 Vector4::Cross(Vector4 &other)
+Vector4 Vector4::Cross(const Vector4 &other)
 	//Returns the normalised cross product of two vectors. The normalised vector is orthogonal to the original two. i.e. perpendicular to both.
 {
 	Vector4 temp(0.0f, 0.0f, 0.0f, 0.0f);
@@ -218,12 +218,12 @@ Vector4& Vector4::operator/=(const float &multiplier)
 	return *this;
 }
 
-bool Vector4::operator==(Vector4 &other)
+bool Vector4::operator==(const Vector4 &other)
 {
 	return x==other.x && y==other.y && z==other.z && w==other.w;
 }
 
-bool Vector4::operator!=(Vector4 &other)
+bool Vector4::operator!=(const Vector4 &other)
 {
 	return x!=other.x || y!=other.y || z!=other.z || w!=other.w;
 }
