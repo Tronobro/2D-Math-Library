@@ -24,10 +24,10 @@ public:
 
 	static float Distance(const Vector2& one, const Vector2& two);	//Calculates the magnitude between two Vector2s
 	
-	float ToRadians(float degrees);
+	static float ToRadians(float degrees);
 							//Converts degrees to radians
 
-	float ToDegrees(float radians);
+	static float ToDegrees(float radians);
 							//Converts radians to degrees
 
 	static Vector2 FromAngle(float degrees);
