@@ -21,18 +21,31 @@ public:
 	Vector4(const Vector4& other);
 	~Vector4();
 
-	static Vector4 Zero();
-	static Vector4 One(); 
-	static float Distance(const Vector4& one, const Vector4& two);
-	static float ToRadians(float degrees);
-	static float ToDegrees(float radians);
+	static Vector4 Zero();	//Returns Vector4 with all values set to 0.0f
 
-	void OutputToConsole();
-	float Magnitude();
-	Vector4 GetNormal();
-	float Dot(const Vector4 &other);
+	static Vector4 One();	//Returns a Vector4 with all values set to 1.0f
+
+	static float Distance(const Vector4& one, const Vector4& two);
+							//Calulates the magnitude between two Vector4s
+
+	static float ToRadians(float degrees);
+							//Converts degrees to radians
+
+	static float ToDegrees(float radians);
+							//Converts radians to degrees
+
+	void OutputToConsole();	//Outputs the Vector4 to the console
+
+	float Magnitude();	//Calculates the magnitude of the vector
+
+	Vector4 GetNormal();	//Returns the normalised version of the vector
+
+	float Dot(const Vector4 &other);	//Calculates the dot product with another vector
+
 	//float AngleBetween(Vector4 &other);
-	Vector4 Cross(Vector4 &other);
+
+	Vector4 Cross(Vector4 &other);		//Calculates the cross product with another vector
+										//Homogenus 3D vector
 
 	//Overloads
 	Vector4 operator=(const Vector4 &other);
@@ -48,7 +61,7 @@ public:
 	bool operator!=(Vector4 &other);
 
 private:
-	Vector4 Normalise();
+	Vector4 Normalise();	//Returns the normalised vector
 };
 #endif
 

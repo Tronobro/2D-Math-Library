@@ -25,11 +25,14 @@ int main()
 	matrix*=Matrix3x3::setupScale(Vector2(2.0f, 2.0f));
 	matrix.OutputToConsole();
 
-	(matrix*tl).OutputToConsole();
+	matrix = matrix*matrix.GetInverse();
+	matrix.OutputToConsole();
+
+	/*(matrix*tl).OutputToConsole();
 	(matrix*bl).OutputToConsole();
 	(matrix*br).OutputToConsole();
 	(matrix*tr).OutputToConsole();
-	(matrix*origin).OutputToConsole();
+	(matrix*origin).OutputToConsole();*/
 
 	//if(matrix == matrix2)
 	//{

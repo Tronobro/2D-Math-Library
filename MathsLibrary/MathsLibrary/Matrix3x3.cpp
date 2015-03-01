@@ -78,6 +78,7 @@ Matrix3x3 Matrix3x3::setupScale(Vector2 Scale)
 	return temp;
 }
 
+//Single scalar parameter
 //Matrix3x3 Matrix3x3::setupScale(float Scale)
 //{
 //	Matrix3x3 temp(Identity());
@@ -182,7 +183,7 @@ Matrix3x3& Matrix3x3::Inverse()
 	return *this;
 }
 
-Matrix3x3 Matrix3x3::operator +(Matrix3x3& other)
+Matrix3x3 Matrix3x3::operator +(const Matrix3x3& other)
 {
 	Matrix3x3 temp; 
 	for(size_t i = 0; i<3; i++)
@@ -195,13 +196,13 @@ Matrix3x3 Matrix3x3::operator +(Matrix3x3& other)
 	return temp;
 }
 
-Matrix3x3& Matrix3x3::operator +=(Matrix3x3& other)
+Matrix3x3& Matrix3x3::operator +=(const Matrix3x3& other)
 {
 	*this = *this + other;
 	return *this;
 }
 
-Matrix3x3 Matrix3x3::operator -(Matrix3x3& other)
+Matrix3x3 Matrix3x3::operator -(const Matrix3x3& other)
 {
 	Matrix3x3 temp; 
 	for(size_t i = 0; i<3; i++)
@@ -214,13 +215,13 @@ Matrix3x3 Matrix3x3::operator -(Matrix3x3& other)
 	return temp;
 }
 
-Matrix3x3& Matrix3x3::operator -=(Matrix3x3& other)
+Matrix3x3& Matrix3x3::operator -=(const Matrix3x3& other)
 {
 	*this = *this - other;
 	return *this;
 }
 
-Matrix3x3 Matrix3x3::operator *(Matrix3x3& other)
+Matrix3x3 Matrix3x3::operator *(const Matrix3x3& other)
 {
 	Matrix3x3 temp;
 	for(size_t j = 0; j<3; j++)
@@ -236,13 +237,13 @@ Matrix3x3 Matrix3x3::operator *(Matrix3x3& other)
 	return temp;
 }
 
-Matrix3x3& Matrix3x3::operator *=(Matrix3x3& other)
+Matrix3x3& Matrix3x3::operator *=(const Matrix3x3& other)
 {
 	*this = *this * other;
 	return *this;
 }
 
-Vector3 Matrix3x3::operator *(Vector3& other)
+Vector3 Matrix3x3::operator *(const Vector3& other)
 {
 	Vector3 temp(0.0f, 0.0f, 0.0f);	
 
@@ -253,7 +254,7 @@ Vector3 Matrix3x3::operator *(Vector3& other)
 	return temp;
 }
 
-Matrix3x3 Matrix3x3::operator*(float scalar)
+Matrix3x3 Matrix3x3::operator*(const float& scalar)
 {
 	Matrix3x3 temp(*this);
 	for(size_t j = 0; j<3; j++)
@@ -266,13 +267,13 @@ Matrix3x3 Matrix3x3::operator*(float scalar)
 	return temp;
 }
 
-Matrix3x3& Matrix3x3::operator*=(float scalar)
+Matrix3x3& Matrix3x3::operator*=(const float& scalar)
 {
 	*this = *this * scalar;
 	return *this;
 }
 
-bool Matrix3x3::operator == (Matrix3x3& other)
+bool Matrix3x3::operator == (const Matrix3x3& other)
 {
 	return
 		(matrix[0][0] == other.matrix[0][0]
@@ -286,7 +287,7 @@ bool Matrix3x3::operator == (Matrix3x3& other)
 	&& matrix[2][2] == other.matrix[2][2]);
 }
 
-bool Matrix3x3::operator != (Matrix3x3& other)
+bool Matrix3x3::operator != (const Matrix3x3& other)
 {
 	return
 		(matrix[0][0] != other.matrix[0][0]

@@ -45,25 +45,25 @@ public:
 	//builds and returns a new matrix that is the transpose of this matrix
 	Matrix3x3 GetTranspose();
 
-	Matrix3x3 GetInverse();
+	Matrix3x3 GetInverse();	//Returns the inverse of the matrix
 
-	Matrix3x3& Inverse();//needs testing
+	Matrix3x3& Inverse();	//Replaces the matrix with its inverse
 	
-	Matrix3x3 operator +(Matrix3x3& other);
-	Matrix3x3 operator -(Matrix3x3& other);
-	Matrix3x3 operator *(Matrix3x3& other);
-    Vector3 operator *(Vector3& other);
+	Matrix3x3 operator +(const Matrix3x3& other);
+	Matrix3x3 operator -(const Matrix3x3& other);
+	Matrix3x3 operator *(const Matrix3x3& other);
+    Vector3 operator *(const Vector3& other);
 
-	Matrix3x3 operator*(float scalar);
-	Matrix3x3& operator*=(float scalar);
+	Matrix3x3 operator*(const float& scalar);
+	Matrix3x3& operator*=(const float& scalar);
 
-	Matrix3x3& operator +=(Matrix3x3& other);
-	Matrix3x3& operator -=(Matrix3x3& other);
-	Matrix3x3& operator *=(Matrix3x3& other);
-	bool operator == (Matrix3x3& other);
-	bool operator != (Matrix3x3& other);
+	Matrix3x3& operator +=(const Matrix3x3& other);
+	Matrix3x3& operator -=(const Matrix3x3& other);
+	Matrix3x3& operator *=(const Matrix3x3& other);
+	bool operator == (const Matrix3x3& other);
+	bool operator != (const Matrix3x3& other);
 
 private: 
-	float GetDeterminant();//needs testing
+	float GetDeterminant();	//Returns the determinant of the matrix
 };
 #endif

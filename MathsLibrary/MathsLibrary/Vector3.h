@@ -21,18 +21,30 @@ public:
 	Vector3(const Vector3& other);
 	~Vector3();
 
-	static Vector3 Zero();
-	static Vector3 One(); 
-	static float Distance(const Vector3& one, const Vector3& two);
-	static float ToRadians(float degrees);
-	static float ToDegrees(float radians);
+	static Vector3 Zero();	//Returns Vector3 with all values set to 0.0f
 
-	void OutputToConsole();
-	float Magnitude();
-	Vector3 GetNormal();
-	float Dot(const Vector3 &other);
-	float AngleBetween(Vector3 &other);
-	Vector3 Cross(Vector3 &other);
+	static Vector3 One();	//Returns a Vector3 with all values set to 1.0f
+
+	static float Distance(const Vector3& one, const Vector3& two);
+							//Calculates the magnitude between two Vector3s
+
+	static float ToRadians(float degrees);
+							//Converts degrees to radians
+
+	static float ToDegrees(float radians);
+							//Converts radians to degrees
+
+	void OutputToConsole();	//Outputs the Vector3 to the console
+
+	float Magnitude();	//Calculates the magnitude of the vector
+
+	Vector3 GetNormal();	//Returns the normalised version of the vector
+
+	float Dot(const Vector3 &other);	//Calculates the dot product with another vector
+
+	float AngleBetween(Vector3 &other);	//Finds the angle between two vectors
+
+	Vector3 Cross(Vector3 &other);		//Calculates the cross product with another vector
 
 	//Overloads
 	Vector3 operator=(const Vector3 &other);
@@ -48,7 +60,7 @@ public:
 	bool operator!=(Vector3 &other);
 
 private:
-	Vector3 Normalise();
+	Vector3 Normalise();	//Calculates the normalised version of the vector
 	
 };
 #endif
