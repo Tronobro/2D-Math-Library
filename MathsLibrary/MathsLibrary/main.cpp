@@ -22,11 +22,11 @@ int main()
 
 	matrix*=Matrix3x3::setupTranslation(Vector3(100.0f, 100.0f, 0.0f));
 	//matrix*=Matrix3x3::setupRotation(10.f);
-	matrix*=Matrix3x3::setupScale(Vector2(2.0f, 2.0f));
-	matrix.OutputToConsole();
+	//matrix*=Matrix3x3::setupScale(Vector2(2.0f, 2.0f));
+	(matrix).OutputToConsole();
 
-	matrix = matrix*matrix.GetInverse();
-	matrix.OutputToConsole();
+	//matrix = matrix*matrix.GetInverse();
+	//matrix.OutputToConsole();
 
 	/*(matrix*tl).OutputToConsole();
 	(matrix*bl).OutputToConsole();
@@ -48,6 +48,27 @@ int main()
 	//cout << boop.Dot(beep) << endl;
 	//cout << beep.Dot(boop) << endl;
 	//cout << beep.AngleBetween(boop) << endl;
+
+
+	//Creates sets up an identity matrix
+	Matrix3x3 initial(Matrix3x3::Identity());
+
+	//Multiplies the initial matrix by the translation matrix
+	initial*=Matrix3x3::setupTranslation(Vector3(10.0f, 10.0f, 1.0f));
+
+	//outputs initial to the console
+	initial.OutputToConsole();
+
+	//Creates a new matrix called inverse and sets it to the inverse
+	//of initial
+	Matrix3x3 inverse = initial.GetInverse();
+
+	//Outputs the result of initial multiplied by inverse
+	//to the console. If the inverse was properly calculated
+	//result of the multiplication should be an Identity matrix.
+	(initial*inverse).OutputToConsole();
+	
+	initial.OutputToConsole();
 	system("pause");
 	return 0;
 }

@@ -60,6 +60,8 @@ public:
 	bool operator==(const Vector4 &other);
 	bool operator!=(const Vector4 &other);
 
+	friend Vector4 operator-(const Vector4 &vector);
+
 private:
 	Vector4 Normalise();	//Returns the normalised vector
 };

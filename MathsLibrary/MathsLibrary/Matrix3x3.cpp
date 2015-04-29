@@ -314,6 +314,18 @@ float Matrix3x3::GetDeterminant()
 	return determinant;
 }
 
+Matrix3x3 operator-(const Matrix3x3 &matrix)
+{
+	Matrix3x3 temp; 
+	for(unsigned int i = 0; i<3; ++i)
+	{
+		for(unsigned int j = 0; j<3; ++j)
+		{
+			temp.matrix[i][j] = -matrix.matrix[i][j];
+		}
+	}
+	return temp;
+}
 
 
 

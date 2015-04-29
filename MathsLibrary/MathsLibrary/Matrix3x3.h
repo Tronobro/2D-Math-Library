@@ -63,6 +63,8 @@ public:
 	bool operator == (const Matrix3x3& other);
 	bool operator != (const Matrix3x3& other);
 
+	friend Matrix3x3 operator-(const Matrix3x3 &matrix);
+
 private: 
 	float GetDeterminant();	//Returns the determinant of the matrix
 };

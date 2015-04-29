@@ -216,3 +216,13 @@ bool Vector3::operator!=(const Vector3 &other)
 {
 	return x!=other.x || y!=other.y || z!=other.z;
 }
+
+//Overload the - unary operator
+Vector3 operator-(const Vector3 &vector)
+{
+	Vector3 v(0.0f, 0.0f, 0.0f); 
+	v.x = -vector.x;
+	v.y = -vector.y;
+	v.z = -vector.z;
+	return v; 
+}

@@ -59,8 +59,9 @@ public:
 	bool operator==(const Vector3 &other);
 	bool operator!=(const Vector3 &other);
 
+	friend Vector3 operator-(const Vector3 &vector);
+
 private:
 	Vector3 Normalise();	//Calculates the normalised version of the vector
-	
 };
 #endif

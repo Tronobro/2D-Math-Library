@@ -227,3 +227,14 @@ bool Vector4::operator!=(const Vector4 &other)
 {
 	return x!=other.x || y!=other.y || z!=other.z || w!=other.w;
 }
+
+//Overload the - unary operator
+Vector4 operator-(const Vector4 &vector)
+{
+	Vector4 v(0.0f, 0.0f, 0.0f, 0.0f); 
+	v.x = -vector.x;
+	v.y = -vector.y;
+	v.z = -vector.z;
+	v.w = -vector.w; 
+	return v; 
+}

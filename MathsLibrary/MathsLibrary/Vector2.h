@@ -56,6 +56,8 @@ public:
 	bool operator==(const Vector2 &other);
 	bool operator!=(const Vector2 &other);
 
+	friend Vector2 operator-(const Vector2 &vector);
+
 
 private:
 	Vector2 Normalise();
